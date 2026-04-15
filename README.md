@@ -1,16 +1,83 @@
-# React + Vite
+# 🌐 Personal Portfolio Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 A modern interactive developer portfolio built using **React.js** and **Three.js**, showcasing my projects in graphics programming, game development, and web technologies.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack of Portfolio Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS
+* **Version Control:** Git & GitHub
+* **Frontend:** React.js
+* **3D Graphics:** Three.js
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Interactive 3D elements using Three.js
+* Smooth animations and modern UI
+* Responsive design for different screen sizes
+* Project showcase section
+* Contact section
+* Fast performance using Vite
 
-## Expanding the ESLint configuration
+## 📦 Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project locally:
+
+```bash
+git clone https://github.com/Shaurya1907/portfolio_website.git
+
+cd portfolio_website
+
+npm install
+
+npm run dev
+```
+
+Then open:
+
+```text
+http://localhost:5173
+```
+
+## 🌍 Live Demo
+
+(Will be added after deployment)
+
+## 📸 Screenshots
+
+### 🏠 Hero Section
+
+![Hero Section](./public/assets/screenshots/hero-section.png)
+
+### 🧠 OpenGL Rendering Engine Project
+
+![OpenGL Project](./public/assets/screenshots/opengl-project.png)
+
+## 📁 Project Structure
+
+```
+portfolio_website/
+│── public/
+│── src/
+│── index.html
+│── package.json
+│── vite.config.js
+│── README.md
+```
+
+## 🛠️ Future Improvements
+
+* Add more projects
+* Improve animations
+* Optimize 3D assets
+* Add dark/light mode toggle
+
+## 👨‍💻 Author
+
+**Shaurya Goyal**
+
+GitHub: https://github.com/Shaurya1907
+
+---
+
+⭐ If you like this project, feel free to star the repository!

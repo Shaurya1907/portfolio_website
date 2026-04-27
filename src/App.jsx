@@ -7,6 +7,7 @@ import Achievement from './sections/Achievement.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './sections/Footer.jsx';
 import Education from './sections/Education.jsx';
+import Game from "./sections/Game.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Hero />
       <About />
       <Projects />
+      <Game />
       <Achievement />
       <Education />
       <Contact />

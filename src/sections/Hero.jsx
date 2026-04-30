@@ -32,7 +32,11 @@ const Hero = () => {
 
       {/* HERO ONLY CANVAS */}
       <div className="absolute inset-0 w-full h-full">
-        <Canvas className="w-full h-full" shadows>
+        <Canvas 
+          className="w-full h-full" 
+          shadows
+          frameloop="demand"
+        >
 
           {/* Background */}
           <color attach="background" args={['#04030f']} />

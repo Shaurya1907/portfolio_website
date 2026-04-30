@@ -7,22 +7,23 @@ const Game = () => {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-neutral-900">
+    <section className="c-space my-20">
+        <div className="w-full text-white-600">
+            <h3 className="head-text">Pong Game</h3>
+            {/* <h2 className="text-white text-3xl mb-6 text-center">
+                🏓 Pong Game
+            </h2> */}
 
-      <h2 className="text-white text-3xl mb-6 text-center">
-        🏓 Pong Game
-      </h2>
+            {/* Phaser wrapper */}
+            <div className="w-full flex justify-center">
 
-      {/* Center container */}
-      <div className="flex justify-center items-center">
+            <div
+                id="phaser-container"
+                className="w-full max-w-[800px] mx-auto"
+            />
 
-        <div
-          id="phaser-container"
-          className="flex justify-center items-center"
-        />
-
-      </div>
-
+            </div>
+        </div>
     </section>
   );
 };

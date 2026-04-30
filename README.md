@@ -49,7 +49,7 @@ http://localhost:5173
 
 ![Hero Section](./public/assets/screenshots/hero-section.png)
 
-### 🧠 OpenGL Rendering Engine Project
+### 🧠 Project Section
 
 ![OpenGL Project](./public/assets/screenshots/opengl-project.png)
 

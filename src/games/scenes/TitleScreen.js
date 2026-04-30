@@ -1,4 +1,7 @@
 import Phaser from "phaser";
+import WebFontFile from "./WebFontFile"
+import Game from '../scenes/Game';
+import GameBackground from "../scenes/GameBackground"; 
 
 export default class TitleScreen extends Phaser.Scene {
 
@@ -6,22 +9,37 @@ export default class TitleScreen extends Phaser.Scene {
         super("TitleScreen");
     }
 
-    preload() {
-
-        // no assets yet
-
+    preload()
+    {
+        const fonts = new WebFontFile(this.load, 'Press Start 2P')
+        this.load.addFile(fonts)
     }
 
     create() {
 
-        // Hello World text
-
-        const text = this.add.text(
+        const title = this.add.text(
             400,
             250,
-            "Hello, World!",
+            "Old School Pong",
+            {
+                fontSize: 38,
+                fontFamily: '"Press Start 2P"'
+            }
         );
-        text.setOrigin(0.5, 0.5)
+        title.setOrigin(0.5, 0.5)
+
+        this.add.text(400, 300, 'Click to Start', {
+            fontSize: 25,
+            fontFamily: '"Press Start 2P"'
+        })
+        .setOrigin(0.5)
+
+        this.input.on('pointerdown', () => {
+
+            this.scene.start('game')
+            this.scene.launch('game-background')
+
+        });
 
 
     }

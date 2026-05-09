@@ -31,7 +31,11 @@ const config = {
 
 };
 
-const game = new Phaser.Game(config);
+let game = null;
 
-
-export default game;
+export function getGame() {
+    if (!game) {
+        game = new Phaser.Game(config);
+    }
+    return game;
+}

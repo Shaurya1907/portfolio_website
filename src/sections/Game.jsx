@@ -1,29 +1,33 @@
 import { useEffect } from "react";
 
-const Game = () => {
+const Game = ({ setIsGameRunning }) => {
 
   useEffect(() => {
-    import("../games/pong/PongGame");
+    let gameInstance;
+
+    import("../games/pong/PongGame").then(module => {
+      gameInstance = module.getGame();
+
+      gameInstance.events.on('game-start', () => {
+        setIsGameRunning(true);
+      });
+
+      gameInstance.events.on('game-over', () => {
+        setIsGameRunning(false);
+      });
+    });
+
   }, []);
 
   return (
     <section className="c-space my-20">
-        <div className="w-full text-white-600">
-            <h3 className="head-text">Pong Game</h3>
-            {/* <h2 className="text-white text-3xl mb-6 text-center">
-                🏓 Pong Game
-            </h2> */}
+      <div className="w-full text-white-600">
+        <h3 className="head-text">Pong Game</h3>
 
-            {/* Phaser wrapper */}
-            <div className="w-full flex justify-center">
-
-            <div
-                id="phaser-container"
-                className="w-full max-w-[800px] mx-auto"
-            />
-
-            </div>
+        <div className="w-full flex justify-center">
+          <div id="phaser-container" className="w-full max-w-[800px] mx-auto" />
         </div>
+      </div>
     </section>
   );
 };

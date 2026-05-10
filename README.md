@@ -53,6 +53,10 @@ http://localhost:5173
 
 ![OpenGL Project](./public/assets/screenshots/opengl-project.png)
 
+### 🧠 Game Section
+
+![Pong Game](./public/assets/screenshots/pongScreenshot.png)
+
 ## 📁 Project Structure
 
 ```

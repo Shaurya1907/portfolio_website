@@ -9,6 +9,13 @@ const config = {
     height: 500,
     type: Phaser.AUTO,
 
+    render: {
+        antialias: false,
+        pixelArt: true,
+        roundPixels: true,
+        powerPreference: 'high-performance'
+    },
+
     parent: "phaser-container",
 
     scale: {

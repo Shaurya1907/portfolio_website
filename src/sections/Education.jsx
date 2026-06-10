@@ -15,7 +15,7 @@ const Education = () => {
 
         <div className="work-container">
           <div className="work-canvas">
-            <Canvas>
+            <Canvas dpr={[1, 1.5]} gl={{ antialias: false, powerPreference: 'high-performance' }}>
               <ambientLight intensity={1} />
 
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

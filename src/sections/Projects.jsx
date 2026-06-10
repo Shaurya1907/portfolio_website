@@ -26,13 +26,14 @@ const Projects = () => {
       <p className="head-text">My work</p>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 h-96 md:h-full overflow-hidden">
           
-          <div className="absolute top-0 right-0">
+          <div className="hidden sm:block absolute top-4 right-4 pointer-events-none">
             <img 
               src={currentProject.spotlight}
               alt="spotlight" 
-              className="w-full h-96 object-cover rounded-xl" 
+              className="w-48 h-48 md:w-72 md:h-72 object-cover rounded-xl shadow-inner" 
+              loading="lazy"
             />
           </div>
           <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
@@ -66,19 +67,54 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded h-96 md:h-full">
-            <Canvas>
-                <ambientLight intensity={Math.PI} />
-                <directionalLight position={[10, 10, 5]} />
-                <Center>
-                    <Suspense fallback={<CanvasLoader />}>
-                        <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                            <DemoComputer texture={currentProject.texture} />
-                        </group>
-                    </Suspense>
-                </Center>
-                <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+        <div className="border border-black-300 bg-black-200 rounded h-96 md:h-full overflow-hidden">
+          {/*
+            <Canvas dpr={[1, 1.5]} gl={{ antialias: false, powerPreference: 'high-performance' }} camera={{ position: [0, -0.1, 4.3], fov: 36 }}>
+              <ambientLight intensity={Math.PI} />
+              <directionalLight position={[10, 10, 5]} />
+              <Center>
+                <Suspense fallback={<CanvasLoader />}>
+                  <group scale={1.2} position={[-0.2, -1.7, 0]} rotation={[0, -0.1, 0]}>
+                    <DemoComputer texture={currentProject.texture} />
+                  </group>
+                </Suspense>
+              </Center>
+              <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} minDistance={3.5} maxDistance={5.5} enablePan={false} />
             </Canvas>
+          */}
+
+          <div className="w-full h-96 md:h-full overflow-hidden flex items-center justify-center">
+            {/* Desktop/Tablet bezel */}
+            <div className="hidden sm:block w-full h-80 md:h-full max-w-full rounded-xl shadow-2xl border border-black-400 bg-gradient-to-b from-black-900/60 to-black-900 p-1">
+              <div className="w-full h-full bg-black rounded-md overflow-hidden flex items-center justify-center relative">
+                  <video
+                    src={currentProject.texture}
+                    poster={currentProject.spotlight}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${currentProject.title} preview video`}
+                    className="w-full h-full object-cover"
+                  />
+              </div>
+            </div>
+
+            {/* Mobile: full-bleed simple video (no bezel or overlays) */}
+            <div className="block sm:hidden w-full h-full">
+              <video
+                src={currentProject.texture}
+                poster={currentProject.spotlight}
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                aria-label={`${currentProject.title} preview video (tap to play)`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
 
       </div>

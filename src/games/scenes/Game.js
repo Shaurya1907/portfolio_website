@@ -127,7 +127,7 @@ class Game extends Phaser.Scene
     updateAI(dt)
     {
         const diff = this.ball.y - this.paddleRight.y
-        const aiSpeed = 5
+        const aiSpeed = 6
 
         this.paddleRightVelocity.y = Phaser.Math.Clamp(diff * aiSpeed, -400, 400)
 
@@ -198,10 +198,21 @@ class Game extends Phaser.Scene
     {
         this.ball.setPosition(400, 250)
 
-        const angle = Phaser.Math.Between(0, 360)
-        const vec = this.physics.velocityFromAngle(angle, 200)
+        const speed = 460
+        const minHorizontalRatio = 0.65
 
-        this.ball.body.setVelocity(vec.x, vec.y)
+        let vx = 0
+        let vy = 0
+
+        while (Math.abs(vx) < speed * minHorizontalRatio) {
+            const angle = Phaser.Math.Between(-50, 50)
+            const direction = Phaser.Math.Between(0, 1) === 0 ? 1 : -1
+
+            vx = Math.cos(Phaser.Math.DegToRad(angle)) * speed * direction
+            vy = Math.sin(Phaser.Math.DegToRad(angle)) * speed
+        }
+
+        this.ball.body.setVelocity(vx, vy)
     }
 }
 

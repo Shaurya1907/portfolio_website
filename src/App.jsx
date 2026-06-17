@@ -67,18 +67,18 @@ const App = () => {
         </Suspense>
       </DeferredSection>
 
-      <DeferredSection fallbackHeight="min-h-[70vh]">
-        <Suspense fallback={<SectionLoader />}>
-          <Projects />
-        </Suspense>
-      </DeferredSection>
-
       <DeferredSection fallbackHeight="min-h-[55vh]">
         <Suspense fallback={<SectionLoader />}>
           <Game
             isGameRunning={isGameRunning}
             setIsGameRunning={setIsGameRunning}
           />
+        </Suspense>
+      </DeferredSection>
+
+      <DeferredSection fallbackHeight="min-h-[70vh]">
+        <Suspense fallback={<SectionLoader />}>
+          <Projects />
         </Suspense>
       </DeferredSection>
 

@@ -27,7 +27,7 @@ const About = () => {
 
             <div>
                 <p className="grid-headtext">Hi I'm Shaurya</p>
-                <p className="grid-subtext ">trying to be a game developer</p>
+                <p className="grid-subtext ">I'm a third-year CS student who builds games in Unreal Engine 5 and C++. I like the kind of problems that live under the hood, AI behavior, physics, rendering, more than the ones on the surface. Everything below is something I built end-to-end, bugs and all.</p>
             </div>
           </div>
         </div>
